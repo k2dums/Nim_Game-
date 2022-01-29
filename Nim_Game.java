@@ -12,15 +12,23 @@ class Nim_Game
 		{	
 	
 			System.out.println("Game of Nim");
+			System.out.println("You can take 1 ,2 or 3 sticks");
 			System.out.println("Give the number of Starting Stones");
 			int n_stones=sc.nextInt();
-			
-			
-			
 				while(n_stones!=0)
 				{
-					System.out.println("How many Stones would the PLayer like to remove \n");
-					n_stones=n_stones-sc.nextInt();
+					System.out.println("How many Stones would the Player like to remove \n");
+					playerChoice=0;
+					while (playerChoice<=0 && playerChoice>3)
+					{
+						playerChoice=sc.nextInt();
+						if (playerChoice <=0  && playerChoice>=3)
+						{
+							System.out.println("Error Give a valid number between 1-3 inclusive");
+						}
+					}
+					
+					n_stones=n_stones-playerChoice;
 					
 					if(n_stones==0)
 					{
